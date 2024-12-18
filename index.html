@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz 1 año y 11 meses Mi Amor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #fbe9e7;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #f06292;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #d81b60;
+        }
+
+        #puzzle-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 2px;
+            margin: 20px auto;
+            width: 400px;
+            height: 400px;
+            border: 4px solid #f06292;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .puzzle-slot {
+            border: 1px solid #f06292;
+            position: relative;
+            background-color: #fff;
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .puzzle-piece {
+            width: 100px;
+            height: 100px;
+            cursor: grab;
+            background-size: 400px 400px;
+            border: 1px solid #ff80ab;
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .puzzle-piece:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #pieces-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-images {
+            display: flex;
+            animation: slide 12s infinite;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto;               /* Mantener la proporción de la imagen */
+            border-radius: 15px;
+            object-fit: cover;          /* Asegura que la imagen se recorte correctamente */
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-100%); }
+            50% { transform: translateX(-200%); }
+            75% { transform: translateX(-300%); }
+            100% { transform: translateX(0); }
+        }
+
+        .win-message {
+            display: none;
+            margin-top: 20px;
+            background-color: #fce4ec;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .win-message h2 {
+            font-size: 2rem;
+            color: #d81b60;
+            margin-bottom: 10px;
+        }
+
+        .win-message img {
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        /* Estilo para la carta */
+        .letter {
+            display: none;
+            background-color: #fff;
+            width: 80%;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .letter h3 {
+            color: #f06292;
+            font-size: 1.5rem;
+        }
+
+        .letter p {
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Feliz 1 año y 11 meses Mi Amor</h1>
+    <p>¡Te amo! Completa este rompecabezas con mucho cariño 💖</p>
+
+    <!-- Carrusel de imágenes -->
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="1.jpeg" alt="Te Quiero">
+            <img src="2.jpeg" alt="Amor">
+            <img src="3.jpeg" alt="Juntos">
+            <img src="5.jpeg" alt="Juntos">
+        </div>
+    </div>
+
+    <!-- Área del rompecabezas -->
+    <div id="puzzle-container"></div>
+
+    <!-- Área de piezas sueltas -->
+    <h2>Piezas</h2>
+    <div id="pieces-container"></div>
+
+    <!-- Mensaje de victoria -->
+    <div class="win-message">
+        <h2>¡Felicidades, mi amor! Has completado el rompecabezas 🎉</h2>
+        <img src="https://media.giphy.com/media/k7qB1okrV3DwQSwvZl/giphy.gif?cid=790b76119xc4nhwg5shmwfn0n7pz3c2laijeom7yl1xem8lg&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Te amo">
+    </div>
+
+    <!-- Carta -->
+    <div class="letter">
+        <h3>Mi Amochiiiiiii</h3>
+        <p>Hoy es un día muy importante y quiero que sepas lo feliz que me haces, eres una mujer increíblemente especial para mí. No tienes idea de lo feliz que me haces sentir. Como siempre te lo he dicho, preciosa, contigo quiero todo. Juntos tendremos un futuro hermoso y maravilloso. Te amo, mi amor.</p>
+        <p>Te amo muchísimo y me haces muy feliz. ¡A por muchos más meses y años juntos!</p>
+        <p>Con todo mi amor</p>
+        <p><strong>[Atentamente]:El amor de tu vida</strong></p>
+    </div>
+
+    <script>
+        const rows = 4;
+        const cols = 4;
+        const imageUrl = '4.jpeg'; // Asegúrate de que esta imagen esté en la misma carpeta
+        const puzzleContainer = document.getElementById('puzzle-container');
+        const piecesContainer = document.getElementById('pieces-container');
+        const winMessage = document.querySelector('.win-message');
+        const letter = document.querySelector('.letter');
+
+        let draggedPiece = null; // Para almacenar la pieza que se está arrastrando
+
+        // Generar los slots y las piezas
+        function createPuzzle() {
+            const positions = [];
+
+            // Crear los slots vacíos
+            for (let i = 0; i < rows * cols; i++) {
+                const slot = document.createElement('div');
+                slot.classList.add('puzzle-slot');
+                slot.dataset.index = i;
+
+                // Permitir soltar piezas en el slot
+                slot.addEventListener('dragover', (e) => e.preventDefault());
+                slot.addEventListener('drop', handleDrop);
+
+                puzzleContainer.appendChild(slot);
+                positions.push(i);
+            }
+
+            // Crear las piezas mezcladas
+            const shuffled = shuffleArray(positions);
+            shuffled.forEach(index => {
+                const piece = document.createElement('div');
+                piece.classList.add('puzzle-piece');
+                piece.style.backgroundImage = `url(${imageUrl})`;
+                piece.style.backgroundPosition = `-${(index % cols) * 100}px -${Math.floor(index / cols) * 100}px`;
+                piece.draggable = true;
+                piece.dataset.index = index;
+
+                // Evento para arrastrar la pieza
+                piece.addEventListener('dragstart', (e) => {
+                    draggedPiece = e.target;
+                });
+
+                piecesContainer.appendChild(piece);
+            });
+        }
+
+        // Función para manejar el soltar la pieza en el slot
+        function handleDrop(e) {
+            const slot = e.target;
+
+            // Si el slot no tiene ya una pieza, soltamos aquí
+            if (!slot.hasChildNodes()) {
+                slot.appendChild(draggedPiece);
+                draggedPiece = null;
+                checkWin();
+            }
+        }
+
+        // Mezclar las piezas
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Verificar si el rompecabezas está resuelto
+        function checkWin() {
+            const slots = document.querySelectorAll('.puzzle-slot');
+            const isSolved = Array.from(slots).every((slot, index) => {
+                const piece = slot.firstChild;
+                return piece && parseInt(piece.dataset.index) === index;
+            });
+
+            if (isSolved) {
+                winMessage.style.display = 'block';
+                letter.style.display = 'block'; // Mostrar la carta
+            }
+        }
+
+        // Inicializar el rompecabezas
+        createPuzzle();
+    </script>
+</body>
+</html>
